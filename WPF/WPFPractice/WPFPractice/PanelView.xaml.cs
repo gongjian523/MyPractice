@@ -16,22 +16,13 @@ using System.Windows.Shapes;
 namespace WPFPractice
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for PanelView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class PanelView : UserControl
     {
-
-        private PanelView panelView = new PanelView();
-
-        public MainWindow()
+        public PanelView()
         {
             InitializeComponent();
-            ContentFrame.Navigate(panelView);
-        }
-
-        private void EnterPanel(object sender, RoutedEventArgs e)
-        {
-            ContentFrame.Navigate(panelView);
         }
     }
 }
