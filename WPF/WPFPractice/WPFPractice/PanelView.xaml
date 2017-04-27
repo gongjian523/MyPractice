@@ -5,34 +5,82 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-        <DockPanel  Margin="20" Background="AliceBlue">
-            <Button DockPanel.Dock="Top" Height="20" Content="TOP1"  />
-            <Button DockPanel.Dock="Top" Height="20" Content="TOP2"  />
-            <Button DockPanel.Dock="Left" Width="20" Content="L1"  />
-            <Button DockPanel.Dock="Left" Width="20" Content="L2"  />
-            <Button DockPanel.Dock="Bottom" Height="20" Content="BOTTOM1"  />
-            <Button DockPanel.Dock="Bottom" Height="20" Content="BOTTOM2"  />
-            <Button DockPanel.Dock="Right"  Width="20" Content="R1"  />
-            <Button DockPanel.Dock="Right"  Width="20" Content="R2"  />
-            <Button DockPanel.Dock="Bottom" Height="20" Content="BOTTOM3"  />
-            <Button DockPanel.Dock="Top" Height="20" Content="TOP3"  />
-            <Button DockPanel.Dock="Left" Width="20" Content="L3"  />
-            <Button DockPanel.Dock="Right" Margin="5" Content="R3"/>
-            <Button DockPanel.Dock="Right" Height="30" Width="40"   VerticalAlignment="Top" Content="R4"/>
-            <Button DockPanel.Dock="Right" Height="30" Width="40"   VerticalAlignment="Bottom" Content="R5"/>
-            <Button DockPanel.Dock="Top" Margin="5" Content="T4"/>
-            <Button DockPanel.Dock="Top" Height="30" Width="40"   HorizontalAlignment="Right" Content="T5"/>
-            <Button DockPanel.Dock="Top" Height="30" Width="40"   HorizontalAlignment="Left" Content="T6"/>
-            <Button Content="Center"/>
-        </DockPanel>
-    </Grid>
+    <DockPanel Margin="10">
+        <Menu DockPanel.Dock="Top" Height="15"/>
+        <StackPanel DockPanel.Dock="Right" Width="Auto">
+            <Button Content="Toolbox">
+                <Button.LayoutTransform>
+                    <RotateTransform Angle="90"/>
+                </Button.LayoutTransform>
+            </Button>
+
+
+            <Button Content="Solution Explorer">
+                <Button.LayoutTransform>
+                    <RotateTransform Angle="90"/>
+                </Button.LayoutTransform>
+            </Button>
+        </StackPanel>
+        <Grid Grid.IsSharedSizeScope="True">
+            <DockPanel>
+                <TextBlock DockPanel.Dock="Top"  Background="LightBlue"  TextAlignment="Center" Text="Start Page"/>
+                <Grid DockPanel.Dock="Left">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <GroupBox Header="Recent Projects"/>
+
+                    <GroupBox  Grid.Row="1" Header="Getting Started" />
+                    <GroupBox  Grid.Row="2" Header="Header Line" />
+                </Grid>
+                <GroupBox Header="Online Articles">
+                    <ListBox>
+                        <ListBoxItem Content="Articles#1"/>
+                        <ListBoxItem Content="Articles#2"/>
+                        <ListBoxItem Content="Articles#3"/>
+                        <ListBoxItem Content="Articles#4"/>
+                    </ListBox>
+                </GroupBox>
+            </DockPanel>
+            <Grid Name="layer1" Visibility="Collapsed">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition SharedSizeGroup="column1" Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <DockPanel Grid.Row="0">
+                        <Button Name="pane1Pin" Width="26" DockPanel.Dock="Right" Background="White"/>
+                        <TextBlock DockPanel.Dock="Left"  Padding="8" TextTrimming="CharacterEllipsis" Text="Toolbox"/>
+                    </DockPanel>
+                </Grid>
+                <GridSplitter Width="5" Grid.Column="1" HorizontalAlignment="Left"/>
+            </Grid>
+
+            <Grid Name="layer2" Visibility="Collapsed">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition SharedSizeGroup="column2" Width="auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="1" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <DockPanel Grid.Row="0">
+                        <Button Name="pane2Pin" Width="26" DockPanel.Dock="Right" Background="White"/>
+                        <TextBlock Padding="8" TextTrimming="CharacterEllipsis" DockPanel.Dock="Left" Text="Solution Explorer"/> 
+                    </DockPanel>
+                </Grid>
+                <GridSplitter Width="5" Grid.Column="1" HorizontalAlignment="Left"/>
+            </Grid>
+        </Grid>
+    </DockPanel>
 </UserControl>
