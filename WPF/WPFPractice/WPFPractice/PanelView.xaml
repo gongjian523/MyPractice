@@ -7,35 +7,36 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <DockPanel Margin="10">
         <Menu DockPanel.Dock="Top" Height="15"/>
-        <StackPanel DockPanel.Dock="Right" Width="Auto">
-            <Button Content="Toolbox">
+        <StackPanel Name="buttonBar" DockPanel.Dock="Right" Width="Auto">
+            <Button Name="pane1Button" Content="Toolbox" MouseEnter="pane1Button_MouseEnter">
                 <Button.LayoutTransform>
                     <RotateTransform Angle="90"/>
                 </Button.LayoutTransform>
             </Button>
 
-
-            <Button Content="Solution Explorer">
+            <Button Name="pane2Button" Content="Solution Explorer" MouseEnter="pane2Button_MouseEnter">
                 <Button.LayoutTransform>
                     <RotateTransform Angle="90"/>
                 </Button.LayoutTransform>
             </Button>
         </StackPanel>
-        <Grid Grid.IsSharedSizeScope="True">
-            <DockPanel>
-                <TextBlock DockPanel.Dock="Top"  Background="LightBlue"  TextAlignment="Center" Text="Start Page"/>
-                <Grid DockPanel.Dock="Left">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                    </Grid.RowDefinitions>
-                    <GroupBox Header="Recent Projects"/>
-
-                    <GroupBox  Grid.Row="1" Header="Getting Started" />
-                    <GroupBox  Grid.Row="2" Header="Header Line" />
-                </Grid>
-                <GroupBox Header="Online Articles">
+        <Grid Name="parentGrid" Grid.IsSharedSizeScope="True">
+            <Grid Name="layer0" MouseEnter="layer0_MouseEnter">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBlock  Grid.ColumnSpan="2" Background="LightBlue"  TextAlignment="Center" Text="Start Page"/>
+                <GroupBox  Grid.Row="1"  Header="Recent Projects"/>
+                <GroupBox  Grid.Row="2" Header="Getting Started" />
+                <GroupBox  Grid.Row="3" Header="Header Line" />
+                <GroupBox  Grid.Column="1" Grid.Row="1"  Grid.RowSpan="3" Header="Online Articles">
                     <ListBox>
                         <ListBoxItem Content="Articles#1"/>
                         <ListBoxItem Content="Articles#2"/>
@@ -43,39 +44,39 @@
                         <ListBoxItem Content="Articles#4"/>
                     </ListBox>
                 </GroupBox>
-            </DockPanel>
+            </Grid>
             <Grid Name="layer1" Visibility="Collapsed">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition SharedSizeGroup="column1" Width="auto"/>
                 </Grid.ColumnDefinitions>
-                <Grid Grid.Column="1">
+                <Grid Grid.Column="1" MouseEnter="pane1_MouseEnter" Background="Yellow">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition />
                     </Grid.RowDefinitions>
                     <DockPanel Grid.Row="0">
-                        <Button Name="pane1Pin" Width="26" DockPanel.Dock="Right" Background="White"/>
+                        <Button Name="pane1Pin" Width="26" DockPanel.Dock="Right" Click="pane1Pin_Click" Background="White"/>
                         <TextBlock DockPanel.Dock="Left"  Padding="8" TextTrimming="CharacterEllipsis" Text="Toolbox"/>
                     </DockPanel>
                 </Grid>
                 <GridSplitter Width="5" Grid.Column="1" HorizontalAlignment="Left"/>
             </Grid>
 
-            <Grid Name="layer2" Visibility="Collapsed">
+            <Grid Name="layer2" Visibility="Collapsed" >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition SharedSizeGroup="column2" Width="auto"/>
                 </Grid.ColumnDefinitions>
 
-                <Grid Grid.Column="1" >
+                <Grid Grid.Column="1" MouseEnter="pane2_MouseEnter" Background="Red">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
                     <DockPanel Grid.Row="0">
-                        <Button Name="pane2Pin" Width="26" DockPanel.Dock="Right" Background="White"/>
+                        <Button Name="pane2Pin" Width="26" DockPanel.Dock="Right" Click="pane2Pin_Click" Background="White"/>
                         <TextBlock Padding="8" TextTrimming="CharacterEllipsis" DockPanel.Dock="Left" Text="Solution Explorer"/> 
                     </DockPanel>
                 </Grid>
