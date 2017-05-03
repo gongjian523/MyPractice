@@ -22,6 +22,7 @@ namespace WPFPractice
     {
 
         private PanelView panelView = new PanelView();
+        private EventAndCommandView eventAndCommandView = new EventAndCommandView();
 
         public MainWindow()
         {
@@ -32,6 +33,11 @@ namespace WPFPractice
         private void EnterPanel(object sender, RoutedEventArgs e)
         {
             ContentFrame.Navigate(panelView);
+        }
+
+        private void EnterEventAndCommand(object sender, RoutedEventArgs e)
+        {
+            ContentFrame.Navigate(eventAndCommandView);
         }
     }
 }
