@@ -13,6 +13,8 @@
             <StackPanel Orientation="Vertical" Margin="0,0,1,0">
                 <Button Height="20" Content=" 布局" HorizontalContentAlignment="Left" BorderThickness="0" Click="EnterPanel"/>
                 <Button Height="20" Content=" 事件与命令" HorizontalContentAlignment="Left" BorderThickness="0" Click="EnterEventAndCommand"/>
+                <Button Height="20" Content=" Content Controls" HorizontalContentAlignment="Left" BorderThickness="0" Click="EnterContentControl"/>
+                <Button Height="20" Content=" Item Controls" HorizontalContentAlignment="Left" BorderThickness="0" Click="EnterItemControl"/>
             </StackPanel>
             <Rectangle HorizontalAlignment="Right" Width="1" Fill="LightGray"/>
             <Frame x:Name="ContentFrame" Grid.Column="1" NavigationUIVisibility="Hidden" />
