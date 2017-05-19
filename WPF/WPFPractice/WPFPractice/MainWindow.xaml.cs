@@ -25,6 +25,8 @@ namespace WPFPractice
         private EventAndCommandView eventAndCommandView = new EventAndCommandView();
         private ContentControlView contentControlView = new ContentControlView();
         private ItemControlView itemControlView = new ItemControlView();
+        private AnimationView animationView = new AnimationView();
+
 
         public MainWindow()
         {
@@ -51,6 +53,11 @@ namespace WPFPractice
         private void EnterItemControl(object sender, RoutedEventArgs e)
         {
             ContentFrame.Navigate(itemControlView);
+        }
+
+        private void EnterAnimation(object sender, RoutedEventArgs e)
+        {
+            ContentFrame.Navigate(animationView);
         }
     }
 }
