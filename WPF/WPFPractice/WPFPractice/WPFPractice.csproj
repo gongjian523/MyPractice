@@ -53,11 +53,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="TemplateView.xaml.cs">
+      <DependentUpon>TemplateView.xaml</DependentUpon>
+    </Compile>
     <Page Include="AnimationView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ContentControlView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomizedControlView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -83,6 +90,9 @@
     <Compile Include="ContentControlView.xaml.cs">
       <DependentUpon>ContentControlView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CustomizedControlView.xaml.cs">
+      <DependentUpon>CustomizedControlView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="EventAndCommandView.xaml.cs">
       <DependentUpon>EventAndCommandView.xaml</DependentUpon>
     </Compile>
@@ -94,6 +104,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="PanelView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TemplateView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -26,7 +26,8 @@ namespace WPFPractice
         private ContentControlView contentControlView = new ContentControlView();
         private ItemControlView itemControlView = new ItemControlView();
         private AnimationView animationView = new AnimationView();
-
+        private CustomizedControlView customizedControlView = new CustomizedControlView();
+        private TemplateView templateView = new TemplateView();
 
         public MainWindow()
         {
@@ -58,6 +59,16 @@ namespace WPFPractice
         private void EnterAnimation(object sender, RoutedEventArgs e)
         {
             ContentFrame.Navigate(animationView);
+        }
+
+        private void EnterCustomizedControl(object sender, RoutedEventArgs e)
+        {
+            ContentFrame.Navigate(customizedControlView);
+        }
+
+        private void EnterTemplate(object sender, RoutedEventArgs e)
+        {
+            ContentFrame.Navigate(templateView);
         }
     }
 }
