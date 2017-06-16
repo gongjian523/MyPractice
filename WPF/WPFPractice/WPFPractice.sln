@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFPractice", "WPFPractice\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventAndCommand", "EventAndCommand\EventAndCommand\EventAndCommand.csproj", "{D2AEFA69-6249-45AA-9A92-36B01DA6AB8E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MahAppDemo", "MahAppDemo\MahAppDemo.csproj", "{32F9694E-17AA-4D7E-8247-209DE2D99B60}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{D2AEFA69-6249-45AA-9A92-36B01DA6AB8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D2AEFA69-6249-45AA-9A92-36B01DA6AB8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D2AEFA69-6249-45AA-9A92-36B01DA6AB8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32F9694E-17AA-4D7E-8247-209DE2D99B60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32F9694E-17AA-4D7E-8247-209DE2D99B60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32F9694E-17AA-4D7E-8247-209DE2D99B60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32F9694E-17AA-4D7E-8247-209DE2D99B60}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
